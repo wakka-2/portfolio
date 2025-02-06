@@ -2,10 +2,22 @@
 
 A modern, responsive portfolio website built with HTML, CSS, and JavaScript, featuring Firebase hosting and analytics integration.
 
+## Live Demo
+
+Visit the live website at: [https://aiman-qaid.web.app](https://aiman-qaid.web.app)
+
+![Portfolio Demo](portfolio-demo.gif)
+
+The website features both light and dark themes, allowing visitors to choose their preferred viewing experience:
+
+| Light Theme | Dark Theme |
+|------------|------------|
+| ![Light Theme](light-theme.png) | ![Dark Theme](dark-theme.png) |
+
 ## Features
 
-- Responsive design for all devices
 - Dark/Light theme toggle
+- Responsive design for all devices
 - Interactive UI with smooth animations
 - Firebase Analytics integration
 - Project showcase with live links
@@ -19,10 +31,6 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript, fea
 - Firebase (Hosting & Analytics)
 - Particles.js for background effects
 - Font Awesome for icons
-
-## Live Demo
-
-Visit the live website at: [https://aiman-qaid.web.app](https://aiman-qaid.web.app)
 
 ## Setup
 
