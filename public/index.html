@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcasing web development and design projects">
+    <meta name="keywords" content="web developer, portfolio, projects, design">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="custom-cursor"></div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="theme-switch" aria-label="Toggle theme">
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Aiman Qaid</span></h1>
+                <p class="subtitle">Android & Flutter Developer</p>
+            </div>
+            <div class="hero-image">
+                <img src="assets/dev-illustration.svg" alt="Developer Illustration" class="profile-img floating">
+                <div class="shape-blob"></div>
+                <div class="shape-blob blob2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Android Mobile Apps Developer specializing in flutter app development after 4 years of experience. Armed with the design of published apps on Google Play and App Store, I am passionate about creating intuitive and engaging mobile experiences. My expertise in mobile technology is developing reliable, high-quality Android applications.</p>
+                
+                <div class="education">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <h4>MSc. Computer Science</h4>
+                        <p>Gisma University (2023 - 2024)</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>BSc. Computer Engineering</h4>
+                        <p>Umm Al Qura University (2014 - 2019)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-android"></i>
+                            <span>Kotlin</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>RESTful APIs</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>MVVM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <i class="fas fa-language"></i>
+                            <span>English (C1)</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-language"></i>
+                            <span>German (A2)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Android App Developer</h3>
+                    <span class="date">2019 - 2023</span>
+                </div>
+                <h4>Frjar | Jeddah</h4>
+                <p>This was the first company I worked for before moving to Germany to Continue my higher studies. with this company I participated in over 100 projects with different suppliers who sells their products both apps were made using MVVM architecture.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Android Apps Instructor</h3>
+                    <span class="date">2021 - 2022</span>
+                </div>
+                <h4>SFCSP | Riyadh</h4>
+                <p>As an instructor I was responsible for preparing the material as well as teaching the students how to become apps developer. I got an average rating of 4.6 / 5.0 as an instructor. I was also, writing there examinations. It was streamed on YouTube.</p>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Android Apps Developer Trainee</h3>
+                    <span class="date">2018 - 2019</span>
+                </div>
+                <h4>Wadi Makkah | Makkah</h4>
+                <p>Participated in the development of two applications in a short period of time, the first was to get an order previous to reach the location of one clients, from apps were made using MVP architecture as a backend service.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/frjar-customer.png" alt="Frjar Customer App">
+                    <div class="project-overlay">
+                        <a href="https://play.google.com/store/apps/details?id=com.frjar.customer" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Frjar Customer</h3>
+                    <p>A comprehensive delivery service app for customers to order and track their deliveries in real-time.</p>
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>Firebase</span>
+                        <span>Payment Gateway</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/frjar-provider.png" alt="Frjar Provider App">
+                    <div class="project-overlay">
+                        <a href="https://play.google.com/store/apps/details?id=com.frjar.provider" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Frjar Provider</h3>
+                    <p>Delivery service provider app with real-time order management and route optimization.</p>
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>Firebase</span>
+                        <span>Location Services</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/ucan.png" alt="UCAN App">
+                    <div class="project-overlay">
+                        <a href="https://play.google.com/store/apps/details?id=com.app.ucan" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>UCAN</h3>
+                    <p>Educational platform connecting students with tutors and educational resources.</p>
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Java</span>
+                        <span>RESTful API</span>
+                        <span>Video Streaming</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/dawul.png" alt="Dawul App">
+                    <div class="project-overlay">
+                        <a href="https://play.google.com/store/apps/details?id=com.dawul" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Dawul</h3>
+                    <p>Real estate marketplace app for property listing, searching, and management.</p>
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>Maps Integration</span>
+                        <span>Real-time Chat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/munjez.png" alt="Munjez App">
+                    <div class="project-overlay">
+                        <a href="https://play.google.com/store/apps/details?id=io.munjez" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Munjez</h3>
+                    <p>Task management and productivity app with smart scheduling and reminders.</p>
+                    <div class="project-tech">
+                        <span>Android</span>
+                        <span>Kotlin</span>
+                        <span>Room DB</span>
+                        <span>WorkManager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Feel free to reach out for collaborations or just a friendly hello</p>
+                <div class="contact-links">
+                    <a href="mailto:wakka-2@hotmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>wakka-2@hotmail.com</span>
+                    </a>
+                    <a href="tel:+49 176 33938340" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+49 176 37938340</span>
+                    </a>
+                    <div class="social-links">
+                        <a href="https://github.com/wakka-2" class="social-icon" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aiman-qaid-8698b4115" class="social-icon" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aiman Qaid. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js';
+      import { getAnalytics, logEvent } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js';
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDW652YZkgG-DdxjJ-OIaEvIb0v-NUMfsA",
+        authDomain: "portfollio-aaf93.firebaseapp.com",
+        projectId: "portfollio-aaf93",
+        storageBucket: "portfollio-aaf93.appspot.com",
+        messagingSenderId: "1012787701179",
+        appId: "1:1012787701179:web:d3281868220611872f909e",
+        measurementId: "G-SCWNB18LNG"
+      };
+      
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      // Log page view
+      logEvent(analytics, 'page_view');
+
+      // Track navigation clicks
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          logEvent(analytics, 'menu_click', {
+            menu_item: link.textContent.trim()
+          });
+        });
+      });
+
+      // Track project clicks
+      document.querySelectorAll('.project-card').forEach(project => {
+        project.addEventListener('click', () => {
+          const projectName = project.querySelector('h3').textContent.trim();
+          logEvent(analytics, 'project_view', {
+            project_name: projectName
+          });
+        });
+      });
+
+      // Track contact clicks
+      document.querySelectorAll('.contact-item').forEach(contact => {
+        contact.addEventListener('click', () => {
+          const contactType = contact.querySelector('i').className.includes('envelope') ? 'email' : 
+                            contact.querySelector('i').className.includes('phone') ? 'phone' : 'other';
+          logEvent(analytics, 'contact_click', {
+            contact_type: contactType
+          });
+        });
+      });
+
+      // Track social media clicks
+      document.querySelectorAll('.social-icon').forEach(social => {
+        social.addEventListener('click', () => {
+          const platform = social.querySelector('i').className.includes('github') ? 'github' :
+                          social.querySelector('i').className.includes('linkedin') ? 'linkedin' : 'other';
+          logEvent(analytics, 'social_click', {
+            platform: platform
+          });
+        });
+      });
+
+      // Track theme toggle
+      document.getElementById('theme-switch').addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        logEvent(analytics, 'theme_change', {
+          from_theme: currentTheme,
+          to_theme: currentTheme === 'dark' ? 'light' : 'dark'
+        });
+      });
+
+      console.log('Firebase Analytics initialized and events set up');
+    </script>
+</body>
+</html>

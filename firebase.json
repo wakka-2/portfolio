@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "site": "aiman-qaid",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/*.py"
+    ]
+  }
+}

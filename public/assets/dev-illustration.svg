@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#6C63FF;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <g id="Developer-Illustration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Laptop Base -->
+        <path d="M200,500 L600,500 L650,600 L150,600 Z" fill="#2D3748"/>
+        <rect x="220" y="300" width="360" height="200" rx="10" fill="#2D3748"/>
+        
+        <!-- Screen -->
+        <rect x="240" y="320" width="320" height="160" rx="5" fill="#1A202C"/>
+        
+        <!-- Code Lines -->
+        <g transform="translate(260,340)" fill="#6C63FF">
+            <rect x="0" y="0" width="120" height="6" rx="3" opacity="0.8"/>
+            <rect x="0" y="20" width="180" height="6" rx="3" opacity="0.6"/>
+            <rect x="0" y="40" width="140" height="6" rx="3" opacity="0.8"/>
+            <rect x="0" y="60" width="160" height="6" rx="3" opacity="0.6"/>
+            <rect x="0" y="80" width="120" height="6" rx="3" opacity="0.8"/>
+        </g>
+        
+        <!-- Floating Elements -->
+        <g id="floating-elements">
+            <!-- Code Symbols -->
+            <text x="150" y="200" font-family="monospace" font-size="24" fill="#6C63FF">&lt;/&gt;</text>
+            <text x="600" y="250" font-family="monospace" font-size="24" fill="#4A90E2">{}</text>
+            <text x="500" y="150" font-family="monospace" font-size="24" fill="#6C63FF">( )</text>
+            
+            <!-- Tech Icons -->
+            <circle cx="180" cy="280" r="15" fill="#4A90E2"/>
+            <circle cx="620" cy="320" r="15" fill="#6C63FF"/>
+            <circle cx="550" cy="180" r="15" fill="#4A90E2"/>
+        </g>
+        
+        <!-- Decorative Circles -->
+        <circle cx="400" cy="150" r="5" fill="#6C63FF" opacity="0.5"/>
+        <circle cx="200" cy="350" r="5" fill="#4A90E2" opacity="0.5"/>
+        <circle cx="600" cy="400" r="5" fill="#6C63FF" opacity="0.5"/>
+    </g>
+</svg>
