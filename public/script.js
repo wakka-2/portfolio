@@ -153,12 +153,49 @@ const typed = new Typed('.typewriter', {
     loop: true
 });
 
-// Smooth scrolling for navigation links
+// Advanced Smooth Scrolling
+function smoothScroll(target, duration = 1000) {
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    // Custom easing function (cubic-bezier like)
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t * t + b;
+        t -= 2;
+        return c / 2 * (t * t * t + 2) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+// Replace default smooth scrolling with custom implementation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        const target = document.querySelector(this.getAttribute('href'));
+        
+        // Remove any existing scroll-target classes
+        document.querySelectorAll('.scroll-target').forEach(el => {
+            el.classList.remove('scroll-target');
         });
+
+        // Add scroll target animation
+        target.classList.add('scroll-target');
+        setTimeout(() => {
+            target.classList.remove('scroll-target');
+        }, 1000);
+
+        smoothScroll(target);
     });
 });

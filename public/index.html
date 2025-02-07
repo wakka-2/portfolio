@@ -33,31 +33,18 @@
                 <h1>Hi, I'm <span class="highlight">Aiman Qaid</span></h1>
                 <p class="subtitle">Android & Flutter Developer</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="contact-btn">
-                        <i class="fas fa-envelope-open-text"></i>
-                        Contact Me
+                    <a href="#projects" class="hero-btn projects-btn">
+                        <span class="btn-icon">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <span class="btn-text">View Projects</span>
                     </a>
-                </div>
-                <div class="quick-links">
-                    <h3>Featured Projects:</h3>
-                    <div class="project-buttons">
-                        <a href="#frjar-customer" class="project-btn">
-                            <i class="fas fa-mobile-alt"></i>
-                            Frjar Customer
-                        </a>
-                        <a href="#frjar-provider" class="project-btn">
-                            <i class="fas fa-truck"></i>
-                            Frjar Provider
-                        </a>
-                        <a href="#ucan" class="project-btn">
-                            <i class="fas fa-graduation-cap"></i>
-                            UCAN
-                        </a>
-                        <a href="#projects" class="view-all-btn">
-                            <i class="fas fa-th"></i>
-                            View All Projects
-                        </a>
-                    </div>
+                    <a href="#contact" class="hero-btn contact-btn">
+                        <span class="btn-icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                        <span class="btn-text">Contact Me</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
@@ -283,22 +270,33 @@
         <h2>Let's Connect</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <p>Feel free to reach out for collaborations or just a friendly hello</p>
+                <p class="contact-subtitle">Feel free to reach out for collaborations or just a friendly hello</p>
                 <div class="contact-links">
-                    <a href="mailto:wakka-2@hotmail.com" class="contact-item">..................................................................................................................................................................................................................................................................................................
-                        <i class="fas fa-envelope"></i>
-                        <span>wakka-2@hotmail.com</span>
-                    </a>
-                    <a href="tel:+49 176 33938340" class="contact-item">
-                        <i class="fas fa-phone"></i>......................................................................................................................................................................................................................................0
-                        <span>+49 176 37938340</span>.........................................................
-                    </a>
+                    <div class="contact-row">
+                        <a href="mailto:wakka-2@hotmail.com" class="contact-item email-contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>wakka-2@hotmail.com</span>
+                        </a>
+                        <a href="tel:+49 176 37938340" class="contact-item phone-contact">
+                            <i class="fas fa-phone"></i>
+                            <span>+49 176 37938340</span>
+                        </a>
+                    </div>
                     <div class="social-links">
-                        <a href="https://github.com/wakka-2" class="social-icon" target="_blank">
+                        <a href="https://github.com/wakka-2" class="social-icon github-icon" target="_blank" aria-label="GitHub Profile">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/aiman-qaid-8698b4115" class="social-icon" target="_blank">
+                        <a href="https://www.linkedin.com/in/aiman-qaid-8698b4115" class="social-icon linkedin-icon" target="_blank" aria-label="LinkedIn Profile">
                             <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/wakka_2" class="social-icon twitter-icon" target="_blank" aria-label="Twitter Profile">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="contact-cta">
+                        <a href="#contact" class="contact-btn primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send a Message
                         </a>
                     </div>
                 </div>
@@ -331,6 +329,24 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
+
+      // ScrollReveal Animations
+      window.addEventListener('DOMContentLoaded', () => {
+        const sr = ScrollReveal({
+          origin: 'bottom',
+          distance: '50px',
+          duration: 800,
+          delay: 300,
+          easing: 'cubic-bezier(0.5, 0, 0, 1)',
+          reset: false
+        });
+
+        sr.reveal('.hero-buttons', {
+          scale: 0.85,
+          opacity: 0,
+          interval: 200
+        });
+      });
 
       // Log page view
       logEvent(analytics, 'page_view');
@@ -369,7 +385,7 @@
       document.querySelectorAll('.social-icon').forEach(social => {
         social.addEventListener('click', () => {
           const platform = social.querySelector('i').className.includes('github') ? 'github' :
-                          social.querySelector('i').className.includes('linkedin') ? 'linkedin' : 'other';
+                          social.querySelector('i').className.includes('linkedin') ? 'linkedin' : 'twitter';
           logEvent(analytics, 'social_click', {
             platform: platform
           });
