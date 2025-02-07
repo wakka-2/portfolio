@@ -794,6 +794,9 @@ a, button, .skill-item, .project-card, .social-icon {
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 .hero-btn .btn-icon {
@@ -812,31 +815,11 @@ a, button, .skill-item, .project-card, .social-icon {
     z-index: 1;
 }
 
-.hero-btn.projects-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-}
-
-.hero-btn.contact-btn {
-    background-color: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
 .hero-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.3);
-}
-
-.hero-btn.projects-btn:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
-}
-
-.hero-btn.contact-btn:hover {
-    background-color: var(--primary-color);
-    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(var(--primary-rgb), 0.3);
 }
 
 .hero-btn:hover .btn-icon {
