@@ -756,12 +756,12 @@ footer {
 /* Particle Container */
 #particles-js {
     position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    z-index: 0;
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--background-color);
 }
 
 /* Glowing effect for dark theme */

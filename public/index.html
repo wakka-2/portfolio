@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional portfolio showcasing web development and design projects">
     <meta name="keywords" content="web developer, portfolio, projects, design">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <title>My Portfolio</title>
+    <link rel="icon" type="image/png" href="assets/laptop-icon.png">
+    <title>Aiman's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -289,14 +288,12 @@
                         <a href="https://www.linkedin.com/in/aiman-qaid-8698b4115" class="social-icon linkedin-icon" target="_blank" aria-label="LinkedIn Profile">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://twitter.com/wakka_2" class="social-icon twitter-icon" target="_blank" aria-label="Twitter Profile">
-                            <i class="fab fa-twitter"></i>
-                        </a>
                     </div>
                     <div class="contact-cta">
-                        <a href="#contact" class="contact-btn primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Send a Message
+                        <a href="https://t.me/AimanQaid" class="contact-btn primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </span>
+                            <span class="btn-text">Send me a Message</span>
                         </a>
                     </div>
                 </div>
@@ -309,9 +306,10 @@
         <p>&copy; 2025 Aiman Qaid. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
     <script type="module">
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js';
       import { getAnalytics, logEvent } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js';
@@ -377,17 +375,6 @@
                             contact.querySelector('i').className.includes('phone') ? 'phone' : 'other';
           logEvent(analytics, 'contact_click', {
             contact_type: contactType
-          });
-        });
-      });
-
-      // Track social media clicks
-      document.querySelectorAll('.social-icon').forEach(social => {
-        social.addEventListener('click', () => {
-          const platform = social.querySelector('i').className.includes('github') ? 'github' :
-                          social.querySelector('i').className.includes('linkedin') ? 'linkedin' : 'twitter';
-          logEvent(analytics, 'social_click', {
-            platform: platform
           });
         });
       });

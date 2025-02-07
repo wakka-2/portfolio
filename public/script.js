@@ -33,8 +33,8 @@ document.addEventListener('mouseenter', () => {
 });
 
 // Initialize Particles.js
-particlesJS('particles-js',
-    {
+document.addEventListener('DOMContentLoaded', function() {
+    particlesJS('particles-js', {
         "particles": {
             "number": {
                 "value": 80,
@@ -44,18 +44,34 @@ particlesJS('particles-js',
                 }
             },
             "color": {
-                "value": "#4dabf7"
+                "value": ["#4dabf7", "#3bc9db", "#5c7cfa"]
             },
             "shape": {
-                "type": "circle"
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                }
             },
             "opacity": {
                 "value": 0.5,
-                "random": false
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
             },
             "size": {
                 "value": 3,
-                "random": true
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
             },
             "line_linked": {
                 "enable": true,
@@ -71,7 +87,12 @@ particlesJS('particles-js',
                 "random": false,
                 "straight": false,
                 "out_mode": "out",
-                "bounce": false
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
             }
         },
         "interactivity": {
@@ -86,11 +107,36 @@ particlesJS('particles-js',
                     "mode": "push"
                 },
                 "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
             }
         },
         "retina_detect": true
-    }
-);
+    });
+});
 
 // Theme Switcher
 const themeSwitch = document.getElementById('theme-switch');
@@ -193,9 +239,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         // Add scroll target animation
         target.classList.add('scroll-target');
         setTimeout(() => {
-            target.classList.remove('scroll-target');
+   
         }, 1000);
 
         smoothScroll(target);
+    });
+});
+
+// Track social media clicks
+document.querySelectorAll('.social-icon').forEach(social => {
+    social.addEventListener('click', () => {
+        const platform = social.querySelector('i').className.includes('github') ? 'github' : 'linkedin';
+        logEvent(analytics, 'social_click', {
+            platform: platform
+        });
+    });
+});
+
+// Track theme toggle
+document.getElementById('theme-switch').addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    logEvent(analytics, 'theme_toggle', {
+        theme: currentTheme
     });
 });
