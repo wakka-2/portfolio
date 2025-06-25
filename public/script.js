@@ -3,33 +3,71 @@ const cursor = document.querySelector('.custom-cursor');
 const cursorDot = document.querySelector('.cursor-dot');
 const buttons = document.querySelectorAll('a, button, .skill-item, .project-card, .social-icon');
 
-// Update cursor position
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    cursorDot.style.left = e.clientX + 'px';
-    cursorDot.style.top = e.clientY + 'px';
-});
+// Detect touch device more comprehensively
+function isTouchDevice() {
+    return (
+        'ontouchstart' in window ||           // Works on most browsers 
+        navigator.maxTouchPoints > 0 ||       // Works on IE10/11 and Surface
+        navigator.msMaxTouchPoints > 0 ||     // Works on older IE
+        window.matchMedia("(pointer: coarse)").matches  // CSS media query for touch
+    );
+}
 
-// Add hover effect
-buttons.forEach(button => {
-    button.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-    });
-    button.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-    });
-});
+// Remove cursor if it's a touch device
+document.addEventListener('DOMContentLoaded', () => {
+    if (isTouchDevice()) {
+        // Completely remove cursor elements if they exist
+        if (cursor) {
+            cursor.remove();
+            cursor = null;
+        }
+        if (cursorDot) {
+            cursorDot.remove();
+            cursorDot = null;
+        }
+        
+        // Disable all mouse-related event listeners
+        document.removeEventListener('mousemove', updateCursorPosition);
+        buttons.forEach(button => {
+            button.removeEventListener('mouseenter', addHoverEffect);
+            button.removeEventListener('mouseleave', removeHoverEffect);
+        });
+    } else {
+        // Desktop browser with mouse - set up custom cursor
+        function updateCursorPosition(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+        }
 
-// Hide cursor when it leaves the window
-document.addEventListener('mouseleave', () => {
-    cursor.style.display = 'none';
-    cursorDot.style.display = 'none';
-});
+        function addHoverEffect() {
+            cursor.classList.add('hover');
+        }
 
-document.addEventListener('mouseenter', () => {
-    cursor.style.display = 'block';
-    cursorDot.style.display = 'block';
+        function removeHoverEffect() {
+            cursor.classList.remove('hover');
+        }
+
+        document.addEventListener('mousemove', updateCursorPosition);
+
+        // Add hover effect
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', addHoverEffect);
+            button.addEventListener('mouseleave', removeHoverEffect);
+        });
+
+        // Hide cursor when it leaves the window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.display = 'none';
+            cursorDot.style.display = 'none';
+        });
+
+        document.addEventListener('mouseenter', () => {
+            cursor.style.display = 'block';
+            cursorDot.style.display = 'block';
+        });
+    }
 });
 
 // Initialize Particles.js
@@ -231,7 +269,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         
-        // Remove any existing scroll-target classes
+        // Handle certificate clicks
+        document.addEventListener('DOMContentLoaded', () => {
+            const certificateCards = document.querySelectorAll('.certificate-card');
+            
+            certificateCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Get the certificate link
+                    const certificateLink = card.getAttribute('data-certificate-link');
+                    
+                    // If there's a link, open it in a new tab
+                    if (certificateLink) {
+                        window.open(certificateLink, '_blank');
+                    }
+                });
+            });
+        });
+
         document.querySelectorAll('.scroll-target').forEach(el => {
             el.classList.remove('scroll-target');
         });
